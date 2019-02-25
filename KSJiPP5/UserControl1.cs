@@ -26,8 +26,11 @@ namespace KSJiPP5
         {
             fontSize--;
             //kazde wcisniecie spowoduje ze font z bedzie sie zmniejszal o 1
-            this.Font = new Font("Microsoft Sans Serif", fontSize);
-            if (fontSize <= 10 && fontSize >=0) //event triggeruje sie gdy font jest mniejszy od 11
+            if (fontSize > 0)
+            {
+                this.Font = new Font("Microsoft Sans Serif", fontSize);
+            }
+            if (fontSize <= 10) //event triggeruje sie gdy font jest mniejszy od 11
             {
                 if (EndOfFun != null)   //jak nic nie bedzie przypisane do tego zdarzenia to program by się wywalał. Więc gdy nic nie przypiszesz do tego zdarzenia to po prostu ono się nigdy nie wywoła
                 {
