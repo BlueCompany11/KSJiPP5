@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace KSJiPP5
+namespace JNJiPP5
 {
     public partial class UserControl1 : Button
     {
@@ -17,11 +17,11 @@ namespace KSJiPP5
         {
             InitializeComponent();
             this.Font = new Font("Microsoft Sans Serif", fontSize);
-            this.ForeColor = Color.Red;   //przycisk ma teraz domyślnie ustawiony kolor tekstu - jeżeli chcemy by wszystkie przyciski miały
+            this.ForeColor = Color.Black;   //przycisk ma teraz domyślnie ustawiony kolor tekstu - jeżeli chcemy by wszystkie przyciski miały
             // taką opcję to nie musimy już tego wszędzie umieszczać, a korzystać z tej kontrolki
             this.Click += LowerFont;    //metoda LowerFont wywola sie przy kazdym kilknieciu
         }
-
+        
         private void LowerFont(object sender, EventArgs e)
         {
             fontSize--;
@@ -30,17 +30,20 @@ namespace KSJiPP5
             {
                 this.Font = new Font("Microsoft Sans Serif", fontSize);
             }
-            if (fontSize <= 10) //event triggeruje sie gdy font jest mniejszy od 11
+            if (fontSize < 11)
             {
-                if (EndOfFun != null)   //jak nic nie bedzie przypisane do tego zdarzenia to program by się wywalał. Więc gdy nic nie przypiszesz do tego zdarzenia to po prostu ono się nigdy nie wywoła
-                {
-                    EndOfFun(sender, e);
-                }
+                fontSize = 10;
+                return;
             }
         }
-        
-        public event EventHandler EndOfFun;
-        
-        
+        public void PojazdZniszczony()
+        {
+            this.ForeColor = Color.Red;
+        }
+
+        public void PojazdUszkodzony()
+        {
+            this.ForeColor = Color.Yellow;
+        }
     }
 }

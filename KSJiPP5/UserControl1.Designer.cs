@@ -1,4 +1,4 @@
-﻿namespace KSJiPP5
+﻿namespace JNJiPP5
 {
     partial class UserControl1
     {

@@ -7,42 +7,84 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using KSJiPP5Lib;
+using JNJiPP5lib;
 
-namespace KSJiPP5
+namespace JNJiPP5
 {
+
+
     public partial class Form1 : Form
     {
-        Motor motor;
-        Samochod samochod;
+        Autobus autobus;
+        Tramwaj tramwaj;
 
         public Form1()
         {
             InitializeComponent();
-            userControl11.EndOfFun += UserControl11_EndOfFun;
-            motor = new Motor();
-            samochod = new Samochod();
+            autobus = new Autobus();
+            tramwaj = new Tramwaj();
+            autobus.PrzekroczenieBezpiecznejPredkosci += Autobus_PrzekroczenieBezpiecznejPredkosci;
+            autobus.ZniszczeniePojazdu += Autobus_ZniszczeniePojazdu;
+            tramwaj.PrzekroczenieBezpiecznejPredkosci += Tramwaj_PrzekroczenieBezpiecznejPredkosci;
+            tramwaj.ZniszczeniePojazdu += Tramwaj_ZniszczeniePojazdu;
         }
 
-        private void UserControl11_EndOfFun(object sender, EventArgs e)
+        private void Tramwaj_ZniszczeniePojazdu()
         {
-            MessageBox.Show("Proszę przestać mnie wciskać");
+            tramwajButton.PojazdZniszczony();
         }
 
-        private void buttonMotor_Click(object sender, EventArgs e)
+        private void Tramwaj_PrzekroczenieBezpiecznejPredkosci()
         {
-            if(textBoxMotor.Text != "")
+            tramwajButton.PojazdUszkodzony();
+        }
+
+        private void Autobus_ZniszczeniePojazdu()
+        {
+            autobusButton.PojazdZniszczony();
+        }
+
+        private void Autobus_PrzekroczenieBezpiecznejPredkosci()
+        {
+            autobusButton.PojazdUszkodzony();
+        }
+
+        private void autobusButton_Click(object sender, EventArgs e)
+        {
+            double wartoscZTextBoxa;
+            bool konwersjaUdana = false;
+            try
             {
-                motor.Przyspiesz(Convert.ToDouble(textBoxMotor.Text));
+                wartoscZTextBoxa = Convert.ToDouble(textBoxAutobus.Text);
+                konwersjaUdana = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Podaj wartosc liczbowa");
+            }
+            if (konwersjaUdana)
+            {
+                autobus.ZmienPredkosc(Convert.ToDouble(textBoxAutobus.Text));
             }
             
         }
 
-        private void buttonSamochod_Click(object sender, EventArgs e)
+        private void tramwajButton_Click(object sender, EventArgs e)
         {
-            if(textBoxSamochod.Text != "")
+            double wartoscZTextBoxa;
+            bool konwersjaUdana = false;
+            try
             {
-                samochod.Przyspiesz(Convert.ToDouble(textBoxSamochod.Text));
+                wartoscZTextBoxa = Convert.ToDouble(textBoxAutobus.Text);
+                konwersjaUdana = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Podaj wartosc liczbowa");
+            }
+            if (konwersjaUdana)
+            {
+                tramwaj.ZmienPredkosc(Convert.ToDouble(textBoxTramwaj.Text));
             }
         }
     }

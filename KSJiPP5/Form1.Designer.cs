@@ -1,4 +1,4 @@
-﻿namespace KSJiPP5
+﻿namespace JNJiPP5
 {
     partial class Form1
     {
@@ -28,68 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.userControl11 = new KSJiPP5.UserControl1();
-            this.buttonMotor = new System.Windows.Forms.Button();
-            this.textBoxSamochod = new System.Windows.Forms.TextBox();
-            this.buttonSamochod = new System.Windows.Forms.Button();
-            this.textBoxMotor = new System.Windows.Forms.TextBox();
+            this.textBoxTramwaj = new System.Windows.Forms.TextBox();
+            this.textBoxAutobus = new System.Windows.Forms.TextBox();
+            this.tramwajButton = new JNJiPP5.UserControl1();
+            this.autobusButton = new JNJiPP5.UserControl1();
             this.SuspendLayout();
             // 
-            // userControl11
+            // textBoxTramwaj
             // 
-            this.userControl11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.userControl11.ForeColor = System.Drawing.Color.Red;
-            this.userControl11.Location = new System.Drawing.Point(12, 12);
-            this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(256, 37);
-            this.userControl11.TabIndex = 1;
-            this.userControl11.Text = "Wcisnąć w razie potrzeby";
-            this.userControl11.UseVisualStyleBackColor = true;
+            this.textBoxTramwaj.Location = new System.Drawing.Point(319, 153);
+            this.textBoxTramwaj.Name = "textBoxTramwaj";
+            this.textBoxTramwaj.Size = new System.Drawing.Size(149, 20);
+            this.textBoxTramwaj.TabIndex = 4;
             // 
-            // buttonMotor
+            // textBoxAutobus
             // 
-            this.buttonMotor.Location = new System.Drawing.Point(395, 70);
-            this.buttonMotor.Name = "buttonMotor";
-            this.buttonMotor.Size = new System.Drawing.Size(141, 23);
-            this.buttonMotor.TabIndex = 2;
-            this.buttonMotor.Text = "Przyspiesz motorem o";
-            this.buttonMotor.UseVisualStyleBackColor = true;
-            this.buttonMotor.Click += new System.EventHandler(this.buttonMotor_Click);
+            this.textBoxAutobus.Location = new System.Drawing.Point(319, 77);
+            this.textBoxAutobus.Name = "textBoxAutobus";
+            this.textBoxAutobus.Size = new System.Drawing.Size(149, 20);
+            this.textBoxAutobus.TabIndex = 6;
             // 
-            // textBoxSamochod
+            // tramwajButton
             // 
-            this.textBoxSamochod.Location = new System.Drawing.Point(549, 142);
-            this.textBoxSamochod.Name = "textBoxSamochod";
-            this.textBoxSamochod.Size = new System.Drawing.Size(100, 20);
-            this.textBoxSamochod.TabIndex = 4;
+            this.tramwajButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.tramwajButton.ForeColor = System.Drawing.Color.Black;
+            this.tramwajButton.Location = new System.Drawing.Point(69, 140);
+            this.tramwajButton.Name = "tramwajButton";
+            this.tramwajButton.Size = new System.Drawing.Size(244, 33);
+            this.tramwajButton.TabIndex = 7;
+            this.tramwajButton.Text = "Zmien predkosc tramwaju";
+            this.tramwajButton.UseVisualStyleBackColor = true;
+            this.tramwajButton.Click += new System.EventHandler(this.tramwajButton_Click);
             // 
-            // buttonSamochod
+            // autobusButton
             // 
-            this.buttonSamochod.Location = new System.Drawing.Point(395, 140);
-            this.buttonSamochod.Name = "buttonSamochod";
-            this.buttonSamochod.Size = new System.Drawing.Size(141, 23);
-            this.buttonSamochod.TabIndex = 5;
-            this.buttonSamochod.Text = "Przyspiesz samochodem o";
-            this.buttonSamochod.UseVisualStyleBackColor = true;
-            this.buttonSamochod.Click += new System.EventHandler(this.buttonSamochod_Click);
-            // 
-            // textBoxMotor
-            // 
-            this.textBoxMotor.Location = new System.Drawing.Point(549, 72);
-            this.textBoxMotor.Name = "textBoxMotor";
-            this.textBoxMotor.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMotor.TabIndex = 6;
+            this.autobusButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.autobusButton.ForeColor = System.Drawing.Color.Black;
+            this.autobusButton.Location = new System.Drawing.Point(57, 66);
+            this.autobusButton.Name = "autobusButton";
+            this.autobusButton.Size = new System.Drawing.Size(256, 31);
+            this.autobusButton.TabIndex = 1;
+            this.autobusButton.Text = "Zmien predkosc autobusu";
+            this.autobusButton.UseVisualStyleBackColor = true;
+            this.autobusButton.Click += new System.EventHandler(this.autobusButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBoxMotor);
-            this.Controls.Add(this.buttonSamochod);
-            this.Controls.Add(this.textBoxSamochod);
-            this.Controls.Add(this.buttonMotor);
-            this.Controls.Add(this.userControl11);
+            this.Controls.Add(this.tramwajButton);
+            this.Controls.Add(this.textBoxAutobus);
+            this.Controls.Add(this.textBoxTramwaj);
+            this.Controls.Add(this.autobusButton);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -99,11 +90,10 @@
 
         #endregion
 
-        private UserControl1 userControl11;
-        private System.Windows.Forms.Button buttonMotor;
-        private System.Windows.Forms.TextBox textBoxSamochod;
-        private System.Windows.Forms.Button buttonSamochod;
-        private System.Windows.Forms.TextBox textBoxMotor;
+        private UserControl1 autobusButton;
+        private System.Windows.Forms.TextBox textBoxTramwaj;
+        private System.Windows.Forms.TextBox textBoxAutobus;
+        private UserControl1 tramwajButton;
     }
 }
 
