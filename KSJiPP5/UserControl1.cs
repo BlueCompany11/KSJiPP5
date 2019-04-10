@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace JNJiPP5
-{
-    public partial class UserControl1 : Button
+{   //-	Utworzyć kontrolkę realizującą jakieś zadanie Interfejsu Użytkownika. 
+    public partial class UserControl1 : Button //Wskazówka dla ambitnych: w kontrolkach również można zastosować dziedziczenie po swoich innych kontrolkach albo kontrolkach bazowych, które nadają np. wygląd naszym kontrolkom.
     {
         int fontSize = 15;
         public UserControl1()

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using JNJiPP5lib;
+using JNJiPP5lib; //-	Użyć komponentów w formularzu albo na innych kontrolkach.
 
 namespace JNJiPP5
 {
